@@ -1,0 +1,74 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/adminAddTeam.css">
+
+<div class="container">
+	<h1 class="text-center">Тоглогч шилжүүлэх</h1>
+	<hr>
+	<div class="row">
+		<div class="col-md-3">
+			<img id="img" src="/img/image_icon.png">
+			<input disabled type="file" value="upload" id="file-button">
+		</div>
+		<div class="col-md-9">
+  			<form>
+          <div class="form-group">
+          <label>Тоглогчийн шилжих баг</label>
+          <select class="form-control" id="player-team-name">
+            
+            <% var keys = Object.keys(teams); %>
+            <% for (var i = 0; i < keys.length; i++){ %>
+              <% var team = teams[ keys[i] ]; %>
+              <option value="<%= team.teamName %>"><%= team.teamName %></option>
+            <% } %>
+          </select>
+          </div>
+          <div class="form-group">
+            <label>Тоглогчийн шинэ баг дах индекс</label>
+            <input type="number" class="form-control" id="player-index">
+          </div>
+  			  <div class="form-group">
+  			    <label>Тоглогчийн бүтэн нэр</label>
+  			    <input disabled type="text" class="form-control" id="player-full-name" placeholder="James Harden">
+  			  </div>
+  			  <div class="form-group">
+  			    <label>Тоглогчийн өмсгөл дээрх нэр</label>
+  			    <input disabled type="text" class="form-control" id="player-name" placeholder="Harden">
+  			  </div>
+  			  <div class="form-group">
+  			    <label>Тоглогчийн хувийн дугаар</label>
+  			    <input disabled type="number" class="form-control" id="player-number" placeholder="13">
+  			  </div>
+          <div class="form-group">
+            <label>Лигт элссэн он</label>
+            <input disabled type="number" class="form-control" id="player-debut" placeholder="2009">
+          </div>
+          <div class="form-group">
+            <label>Өндөр</label>
+            <input disabled type="text" class="form-control" id="player-height" placeholder="1.96м">
+          </div>
+          <div class="form-group">
+            <label>Жин</label>
+            <input disabled type="text" class="form-control" id="player-weight" placeholder="99.8кг">
+          </div>
+          <div class="form-group">
+            <label>Төрсөн огноо</label>
+            <input disabled type="text" class="form-control" id="player-birthday" placeholder="08/26/1989">
+          </div>
+          <div class="form-group">
+            <label>Өмнөх багууд</label>
+            <textarea disabled class="form-control" rows="2" id="player-previuos-teams" placeholder=
+"HOU 2012-18
+OKC 2009-12"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Намтар</label>
+            <textarea disabled class="form-control" rows="10" id="player-bio"></textarea>
+          </div>
+  			  <button class="btn btn-success pull-right" id="submit">Илгээх</button>
+  			</form>
+		</div>
+	</div>
+</div>
+<p class="hidden" id="id"><%= player.playerId %></p>
+<script src="/js/adminPlayersTransferTeamPlayer.js"></script>
+<% include ./partials/footer %>

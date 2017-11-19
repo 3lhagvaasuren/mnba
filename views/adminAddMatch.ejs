@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/adminAddMatch.css">
+
+<% var keys1 = Object.keys(homeTeamPlayers); %>
+<p class="hidden" id="home-team-name"><%= homeTeamPlayers[keys1[0]].playerTeamName %></p>
+<% var keys2 = Object.keys(guestTeamPlayers); %>
+<p class="hidden" id="guest-team-name"><%= guestTeamPlayers[keys2[0]].playerTeamName %></p>
+
+<div class="container">
+	<form action="/admin/add/match/rosters" method="GET">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<% var keys = Object.keys(homeTeamPlayers); %>
+
+				<% for (var i = 0; i < keys.length; i++){ %>
+					<input name="homeRosters[]" value="<%=i%>" class="home-checkbox homeUnchecked" type="checkbox" id="<%= keys[i] %>"><%= homeTeamPlayers[ keys[i] ].playerFullName %><br>
+				<% } %>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<% keys = Object.keys(guestTeamPlayers); %>
+				<input type="text" class="hidden" name="guestTeamName" value="<%=guestTeamPlayers[keys2[0]].playerTeamName%>">
+				<input type="text" class="hidden" name="homeTeamName" value="<%=homeTeamPlayers[keys1[0]].playerTeamName%>">
+				<% for (var i = 0; i < keys.length; i++){ %>
+					<input name="guestRosters[]" value="<%=i%>" class="guest-checkbox guestUnchecked" type="checkbox" id="<%= keys[i] %>"><%= guestTeamPlayers[ keys[i] ].playerFullName %><br>
+				<% } %>
+			</div>
+		</div>
+		<button class="btn btn-success" id="submit">Илгээх</button>
+	</form>
+	
+</div>
+
+
+<script src="/js/adminAddMatch.js"></script>
+<% include ./partials/footer %>

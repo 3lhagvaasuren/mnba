@@ -1,0 +1,72 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/adminAddSchedules.css">
+
+<div class="container">
+	<h1 class="text-center">Тоглолтын хуваариуд</h1>
+	<hr>
+	<div class="row">
+		<div class="col-md-3 col-sm-3">
+			<form>
+        	  <div class="form-group">
+        	    <label>Тоглолт болох огноо</label>
+        	    <input required type="date" class="form-control" id="match-date-cal">
+        	  </div>
+        	  <div class="form-group">
+        	    <label>Тоглолт болох огноо (үгээр)</label>
+        	    <input required type="text" class="form-control" id="match-date" placeholder="Monday, 20 November">
+        	  </div>
+        	  <div class="form-group">
+        	    <label>Эзэн баг - Зочин баг</label>
+        	    <br>
+        	    <select required id="home-team">
+        	    	<% var keys = Object.keys(teams); %>
+        	    	<% for (var i = 0; i < keys.length; i++) { %>
+        	    		<option value="<%= teams[ keys[i] ].teamName; %>"><%= teams[ keys[i] ].teamName; %></option>
+        	    	<% } %>
+        	    </select>
+        	     - 
+        	    <select required id="guest-team">
+        	    	<% keys = Object.keys(teams); %>
+        	    	<% for (var i = 0; i < keys.length; i++) { %>
+        	    		<option value="<%= teams[ keys[i] ].teamName; %>"><%= teams[ keys[i] ].teamName; %></option>
+        	    	<% } %>
+        	    </select>
+        	  </div>
+        	  
+  			</form>
+  			<a href="#" id="submit" class="btn btn-success">Нэмэх</a>
+		</div>
+		<div class="col-md-9 col-sm-9">
+			<% if (schedules != null) { %>
+				<% var keys = Object.keys(schedules); %>
+    			<% for (var i = 0; i < keys.length; i++) { %>
+        			<% var data = schedules[ keys[i] ]; %>
+			<div id="schedule<%= keys[i] %>" class="row">
+				<div class="col-md-5 col-sm-5">
+					<h1><%= data.matchDate %></h1>
+				</div>
+				<div class="teams col-md-7 col-sm-7">
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<h3><%= data.homeTeamFullName %> <%= data.homeTeamWL %></h3>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<h3><%= data.guestTeamFullName %> <%= data.guestTeamWL %></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+				<a href="#" id="delete<%= keys[i] %>" class="delete btn btn-danger btn-sm">Устгах</a>
+				<a href="#" id="go-match<%= keys[i] %>" class="go-match btn btn-success btn-sm">Хөтлөх</a>
+				<br>
+				<% } %>
+			<% } %>
+		</div>
+		
+	</div>
+</div>
+
+<script src="/js/adminAddSchedules.js"></script>
+<% include ./partials/footer %>

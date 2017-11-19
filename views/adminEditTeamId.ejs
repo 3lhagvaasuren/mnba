@@ -1,0 +1,43 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/adminEditTeamId.css">
+
+<div class="container">
+	<h1 class="text-center">Багийн мэдээлэл засах</h1>
+	<hr>
+	<div class="row">
+		<div class="col-md-3">
+			<img id="img" src="/img/image_icon.png">
+			<input disabled type="file" value="upload" id="file-button">
+		</div>
+		<div class="col-md-9">
+  			<form>
+  			  <div class="form-group">
+  			    <label>Багийн бүтэн нэр</label>
+  			    <input type="text" class="form-control" id="team-full-name" placeholder="Houston Rockets">
+  			  </div>
+  			  <div class="form-group">
+  			    <label>Багийн дэлгэцэн дэх нэр</label>
+  			    <input type="text" class="form-control" id="team-name" placeholder="HOU">
+  			  </div>
+  			  <div class="form-group">
+  			    <label>Багийн цахим хаяг</label>
+  			    <input type="text" class="form-control" id="team-website" placeholder="HOU">
+  			  </div>
+  			  <div class="form-group">
+  			    <label>Лигт элссэн он</label>
+  			    <input type="number" class="form-control" id="team-debut" placeholder="2017">
+  			  </div>
+          <div class="form-group">
+            <label>Намтар</label>
+            <textarea class="form-control" rows="10" id="team-bio"></textarea>
+          </div>
+  			  <button class="btn btn-success pull-right" id="submit" disabled>Засах</button>
+  			</form>
+		</div>
+	</div>
+</div>
+
+
+<p id="hidden" class="hidden"><%= id %></p>
+<script src="/js/adminEditTeamId.js"></script>
+<% include ./partials/footer %>

@@ -1,0 +1,67 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/adminAddTeam.css">
+
+<div class="container">
+	<h1 class="text-center">Тоглогчийн мэдээллийг шинэчлэх</h1>
+	<hr>
+	<div class="row">
+		<div class="col-md-3">
+			<img id="img" src="/img/image_icon.png">
+			<input disabled type="file" value="upload" id="file-button">
+		</div>
+		<div class="col-md-9">
+  			<form>
+          <div class="form-group">
+            <label>Тоглогчийн индекс</label>
+            <input type="number" class="form-control" id="player-index">
+          </div>
+          <div class="form-group">
+            <label>Тоглогчийн байрлал</label>
+            <input type="text" class="form-control" id="player-position" placeholder="G">
+          </div>
+  			  <div class="form-group">
+  			    <label>Тоглогчийн бүтэн нэр</label>
+  			    <input type="text" class="form-control" id="player-full-name" placeholder="James Harden">
+  			  </div>
+  			  <div class="form-group">
+  			    <label>Тоглогчийн өмсгөл дээрх нэр</label>
+  			    <input type="text" class="form-control" id="player-name" placeholder="Harden">
+  			  </div>
+  			  <div class="form-group">
+  			    <label>Тоглогчийн хувийн дугаар</label>
+  			    <input type="number" class="form-control" id="player-number" placeholder="13">
+  			  </div>
+          <div class="form-group">
+            <label>Лигт элссэн он</label>
+            <input type="number" class="form-control" id="player-debut" placeholder="2009">
+          </div>
+          <div class="form-group">
+            <label>Өндөр</label>
+            <input type="text" class="form-control" id="player-height" placeholder="1.96м">
+          </div>
+          <div class="form-group">
+            <label>Жин</label>
+            <input type="text" class="form-control" id="player-weight" placeholder="99.8кг">
+          </div>
+          <div class="form-group">
+            <label>Төрсөн огноо</label>
+            <input type="text" class="form-control" id="player-birthday" placeholder="08/26/1989">
+          </div>
+          <div class="form-group">
+            <label>Өмнөх багууд</label>
+            <textarea class="form-control" rows="2" id="player-previuos-teams" placeholder=
+"HOU 2012-18
+OKC 2009-12"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Намтар</label>
+            <textarea class="form-control" rows="10" id="player-bio"></textarea>
+          </div>
+  			  <button class="btn btn-success pull-right" id="submit">Илгээх</button>
+  			</form>
+		</div>
+	</div>
+</div>
+<p id="id" class="hidden"><%= id %></p>
+<script src="/js/adminEditPlayerId.js"></script>
+<% include ./partials/footer %>

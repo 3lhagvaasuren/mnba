@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/adminTeams.css">
+
+<div class="container">
+    <div id="teams">
+        <table border="1">
+            <tr>
+                <th>Засах</th>
+                <th>Зураг</th>
+                <th>Нэр</th>
+                <th>Бүтэн нэр</th>
+            </tr>
+            <% var keys = Object.keys(teams); %>
+            <% for (var i = 0; i < keys.length; i++) { %>
+                <tr>
+                    <td><a href="/admin/players/transfer/<%= keys[i] %>" id="edit<%= i %>">Засах</a></td>
+                    <td><img src="<%= teams[ keys[i] ].img %>"></td>
+                    <td><%= teams[ keys[i] ].teamName %></td>
+                    <td><%= teams[ keys[i] ].teamFullName %></td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+
+
+<script src="/js/adminTeams.js"></script>
+<% include ./partials/footer %>

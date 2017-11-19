@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/adminPlayersIndex.css">
+
+<div class="container">
+    <div id="teams">
+        <table border="1">
+            <tr>
+                <th>Засах</th>
+                <th>Зураг</th>
+                <th>Баг</th>
+            </tr>
+            <% var keys = Object.keys(teams); %>
+            <% for (var i = 0; i < keys.length; i++) { %>
+                <tr>
+                    <td><a href="/admin/edit/players/index/<%= keys[i] %>" id="edit<%= i %>">Засах</a></td>
+                    <td><img src="<%= teams[ keys[i] ].img %>"></td>
+                    <td><%= teams[ keys[i] ].teamName %></td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+
+
+<script src="/js/adminPlayersIndex.js"></script>
+<% include ./partials/footer %>

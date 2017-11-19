@@ -1,0 +1,51 @@
+img {
+	border-radius: 50%;
+	width: 200px;
+}
+
+button {
+	transition: 0.0s;
+}
+
+h1 {
+	text-align: center;
+	margin: 20px auto 50px;
+	font-size: 6.0em;
+}
+
+.btn-xl {
+    width: 120px;
+}
+
+#cmd1 {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#home-team, #cmd2, #guest-team {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.pts3, .reb {
+	margin-right: 40px;
+}
+
+.pts1, .ast {
+	margin-left: 40px;
+}
+
+#cmd a {
+	font-size: 3.0em;
+	margin: 15px;
+}
+
+.curr {
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 200px;
+}
+
+.halfs {
+	text-align: center;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NBA</title>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/match.css">
+</head>
+<body>
+	<div class="container">
+		<h1 id="scoreboard"><span id="home-team-score">0</span> - <span id="guest-team-score">0</span></h1>
+
+		<div id="home-team">
+			<a href="#">
+				<img id="h0" class="player" src="<%= homeTeamPlayers[0].img %>">
+			</a>
+			<a href="#">
+				<img id="h1" class="player" src="<%= homeTeamPlayers[1].img %>">
+			</a>
+			<a href="#">
+				<img id="h2" class="player" src="<%= homeTeamPlayers[2].img %>">
+			</a>
+			<a href="#">
+				<img id="h3" class="player" src="<%= homeTeamPlayers[3].img %>">
+			</a>
+			<a href="#">
+				<img id="h4" class="player" src="<%= homeTeamPlayers[4].img %>">
+			</a>
+		</div>
+
+		<div id="cmd1">
+			<button class="btn btn-success btn-lg btn-xl btn-width pts1">1PT</button>
+			<button class="btn btn-success btn-lg btn-xl btn-width pts2">2PTS</button>
+			<button class="btn btn-success btn-lg btn-xl btn-width pts3">3PTS</button>
+			<button class="btn btn-danger btn-lg btn-xl btn-width stl">STL</button>
+			<button class="btn btn-success btn-lg btn-xl btn-width pts1">1PT</button>
+			<button class="btn btn-success btn-lg btn-xl btn-width pts2">2PTS</button>
+			<button class="btn btn-success btn-lg btn-xl btn-width pts3">3PTS</button>
+		</div>
+		<div id="cmd2">
+			<button class="btn btn-primary btn-lg btn-xl btn-width ast">AST</button>
+			<button class="btn btn-warning btn-lg btn-xl btn-width blk">BLK</button>
+			<button class="btn btn-primary btn-lg btn-xl btn-width reb">REB</button>
+			<button class="btn btn-danger btn-lg btn-xl btn-width stl">STL</button>
+			<button class="btn btn-primary btn-lg btn-xl btn-width ast">AST</button>
+			<button class="btn btn-warning btn-lg btn-xl btn-width blk">BLK</button>
+			<button class="btn btn-primary btn-lg btn-xl btn-width reb">REB</button>
+		</div>
+		
+		<!-- <div class="idNumber">
+			<span id="guestTeamId0">#9</span>
+			<span id="guestTeamId1">#23</span>
+			<span id="guestTeamId2">#27</span>
+			<span id="guestTeamId3">#30</span>
+			<span id="guestTeamId4">#35</span>
+		</div> -->
+
+		<div id="guest-team">
+			<a href="#">
+				<img id="g0" class="player" src="<%= guestTeamPlayers[0].img %>">
+			</a>
+			<a href="#">
+				<img id="g1" class="player" src="<%= guestTeamPlayers[1].img %>">
+			</a>
+			<a href="#">
+				<img id="g2" class="player" src="<%= guestTeamPlayers[2].img %>">
+			</a>
+			<a href="#">
+				<img id="g3" class="player" src="<%= guestTeamPlayers[3].img %>">
+			</a>
+			<a href="#">
+				<img id="g4" class="player" src="<%= guestTeamPlayers[4].img %>">
+			</a>
+		</div>
+
+		<div class="current">
+			<img src="" id="current-player">
+			<button id="current-cmd" class="btn btn-primary btn-lg btn-width">null</button>
+			<button id="current-flag" class="btn btn-primary btn-lg btn-width">null</button>
+		</div>
+
+		<div class="halfs">
+			<button id="half1" class="half btn btn-warning btn-lg btn-xl btn-width">1ST HALF</button>
+			<button id="half2" class="half btn btn-warning btn-lg btn-xl btn-width">2ND HALF</button>
+			<button id="half3" class="half btn btn-warning btn-lg btn-xl btn-width">3RD HALF</button>
+			<button id="half4" class="half btn btn-warning btn-lg btn-xl btn-width">4TH HALF</button>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/match.js"></script>
+</body>
+</html>
